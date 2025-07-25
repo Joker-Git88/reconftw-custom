@@ -5501,14 +5501,13 @@ function passive() {
 		axiom_shutdown
 	fi
 
-	end
+	
 }
 
 function all() {
 	start
 	recon
 	vulns
-	end
 }
 
 function osint() {
@@ -5610,7 +5609,6 @@ function multi_osint() {
 	}
 	dir=$workdir
 	domain=$multi
-	end
 }
 
 function recon() {
@@ -5882,7 +5880,6 @@ function multi_recon() {
 	}
 	dir=$workdir
 	domain=$multi
-	end
 	[ "$SOFT_NOTIFICATION" = true ] && echo "$(date +'%Y-%m-%d %H:%M:%S') Finished Recon on: ${multi} in ${runtime}" | notify -silent
 }
 
@@ -5948,7 +5945,6 @@ function multi_custom() {
 		axiom_shutdown
 	fi
 
-	end
 }
 
 function subs_menu() {
@@ -5972,7 +5968,6 @@ function subs_menu() {
 		axiom_shutdown
 	fi
 
-	end
 }
 
 function webs_menu() {
@@ -5993,7 +5988,6 @@ function webs_menu() {
 	password_dict
 	url_ext
 	vulns
-	end
 }
 
 function zen_menu() {
@@ -6018,7 +6012,6 @@ function zen_menu() {
 		axiom_shutdown
 	fi
 	cms_scanner
-	end
 }
 
 function help() {
@@ -6342,7 +6335,6 @@ case $opt_mode in
 		for domain in $(cat $list); do
 			start
 			recon
-			end
 		done
 	else
 		if [[ $AXIOM == true ]]; then
@@ -6350,7 +6342,6 @@ case $opt_mode in
 		fi
 		start
 		recon
-		end
 	fi
 	;;
 's')
@@ -6419,12 +6410,10 @@ case $opt_mode in
 		while IFS= read -r domain; do
 			start
 			osint
-			end
 		done
 	else
 		start
 		osint
-		end
 	fi
 	;;
 'z')
